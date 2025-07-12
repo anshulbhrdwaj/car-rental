@@ -50,16 +50,10 @@ export class TripController {
         currency: "INR",
       });
 
-      // Prepare response
-      const response = {
-        success: true,
-        data: {
-          totalFare: fare,
-          currency: "INR",
-        },
-      };
-
-      res.json(response);
+      res.json({
+        totalFare: fare,
+        currency: "INR",
+      });
     } catch (error) {
       logger.error("Error calculating fare:", error);
       next(error);
